@@ -13,7 +13,7 @@ def call(Map settings = [:]) {
 
             }
             stage('Test') {
-                if (!skipTests)
+                if (!settings.skipTests)
                 script {
                     // try {
                     //     if (!settings.skipTests){
