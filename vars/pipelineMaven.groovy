@@ -18,7 +18,7 @@ def call(Map settings = [:]) {
                     sh  'mvn verify'
                     // Importowanie wyników testów
                     junit '**/target/surefire-reports/*.xml'
-                
+                    echo "test przeszedl"
                     }
                 //     catch (Exception e) {
                 //     archiveArtifacts allowEmptyArchieve: true, artifacts: '**/target/surefire-reports/*.xml'
