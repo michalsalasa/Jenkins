@@ -26,10 +26,9 @@ def call(Map settings = [:]) {
                 }
             
             stage('Install') {
-                steps {
+ 
                     // Instalowanie artefaktu w lokalnym repozytorium .m2
                     sh 'mvn install -DskipTests'
-                }
         }
     }
 }
