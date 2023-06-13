@@ -10,7 +10,6 @@ def call(Map settings = [:]) {
             stage('Build') {
                     // Zbudowanie kodu
                     sh 'mvn package -DskipTests'
-
             }
             stage('Test') {
                 if (!skipTests)
