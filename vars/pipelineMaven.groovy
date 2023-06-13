@@ -1,5 +1,7 @@
 def call(Map settings = [:]) {
     node {
+        def skipTests = settings.get('skipTests', false)
+        def skipInstall = settings.get('skipInstall', false)
 
             stage('Download Source Code') {
                     // checkout ([$class: "GitSCM", branches: [[name: 'main']], userRemoteConfigs:[[url: "https://github.com/michalsalasa/spring-petclinic.git"]]])
@@ -11,6 +13,7 @@ def call(Map settings = [:]) {
 
             }
             stage('Test') {
+                if (!skipTests)
                 script {
                     // try {
                     //     if (!settings.skipTests){
@@ -26,6 +29,7 @@ def call(Map settings = [:]) {
                 }
             
             stage('Install') {
+                if (!skipInstall)
  
                     // Instalowanie artefaktu w lokalnym repozytorium .m2
                     sh 'mvn install -DskipTests'
