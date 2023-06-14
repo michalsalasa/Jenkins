@@ -11,8 +11,10 @@ def call(Map settings = [:]) {
                     checkout scm
             }
             stage('Build') {
+                timestamps {
                     // Zbudowanie kodu
                     sh 'mvn package -DskipTests'
+                }
             }
             stage('Test') {
                 if (!skipTests)
