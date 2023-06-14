@@ -1,5 +1,6 @@
 def call(Map settings = [:]) {
     node {
+        options{timestamps()}
         ansiColor('xterm')
         {
         
