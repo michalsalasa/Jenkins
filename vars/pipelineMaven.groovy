@@ -2,7 +2,7 @@ def call(Map settings = [:]) {
     node {
         ansiColor('xterm')
         {
-        
+        options { timestamps () }
         def skipTests = settings.get('skipTests', false)
         def skipInstall = settings.get('skipInstall', false)
 
