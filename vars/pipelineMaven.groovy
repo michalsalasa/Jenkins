@@ -1,6 +1,6 @@
 def call(Map settings = [:]) {
     node {
-        options{timestamps()}
+        options{timestamps()
         ansiColor('xterm')
         {
         
@@ -37,6 +37,7 @@ def call(Map settings = [:]) {
                     // Instalowanie artefaktu w lokalnym repozytorium .m2
                     sh 'mvn install -DskipTests'
         }
+    }
     }
     }
 }
